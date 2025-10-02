@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +22,12 @@
     h2 {
       color: #fff;
       font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-info {
+      color: yellow;
+      font-size: 1.2rem;
       margin-bottom: 1rem;
     }
 
@@ -72,6 +79,32 @@
       font-size: 6vmin;
       margin: 1rem 0;
     }
+    .project-info {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #FFD700; /* golden base text */
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
+
+.college-name {
+  background: linear-gradient(90deg, #ff0000, #ff9900, #33cc33, #0099ff, #ff00cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  animation: glow 3s infinite linear;
+}
+
+@keyframes glow {
+  0%   { text-shadow: 0 0 5px #ff0000; }
+  25%  { text-shadow: 0 0 10px #ff9900; }
+  50%  { text-shadow: 0 0 15px #33cc33; }
+  75%  { text-shadow: 0 0 10px #0099ff; }
+  100% { text-shadow: 0 0 5px #ff00cc; }
+}
+
 
     .msg-container {
       margin: 1rem 0;
@@ -85,6 +118,8 @@
       h2 {
         font-size: 1.5rem;
       }
+     
+
 
       .box {
         font-size: 10vmin;
@@ -99,6 +134,10 @@
       #msg {
         font-size: 7vmin;
       }
+
+      .project-info {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -110,18 +149,23 @@
   </div>
 
   <h2>Tic Tac Toe</h2>
+<p class="project-info">
+  🎓 An Academic Project by <strong style="color:#00FFEA;">Ahsan</strong>, 
+  student of <strong class="college-name">Superior College Kamalia</strong>
+</p>
+
 
   <div class="container">
     <div class="game">
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
+      <button class="box" type="button"></button>
+      <button class="box" type="button"></button>
+      <button class="box" type="button"></button>
+      <button class="box" type="button"></button>
+      <button class="box" type="button"></button>
+      <button class="box" type="button"></button>
+      <button class="box" type="button"></button>
+      <button class="box" type="button"></button>
+      <button class="box" type="button"></button>
     </div>
   </div>
 
@@ -191,6 +235,7 @@
         if ([...boxes].every(box => box.innerText !== "") && !gameOver) {
           msg.innerText = "It's a Draw!";
           msgContainer.classList.remove("hide");
+          gameOver = true;
         }
       };
 
